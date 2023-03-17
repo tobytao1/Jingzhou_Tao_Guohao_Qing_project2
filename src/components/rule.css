@@ -1,0 +1,9 @@
+.background {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  top: 200px;
+  background-color: gray;
+  margin:0 auto;
+  border: 3px solid green;
+}
