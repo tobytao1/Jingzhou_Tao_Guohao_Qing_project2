@@ -3,7 +3,7 @@ import {useSelector, shallowEqual} from "react-redux";
 import "./rule.css";
 //import WordElement from "./WordElement";
 import Button from '@mui/material/Button';
-import {AppBar, Container, Link, Toolbar, Typography} from "@mui/material";
+import {AppBar, Container, Link, Toolbar, Typography,Box} from "@mui/material";
 export default function Rule() {
     return (
         <div>
@@ -13,12 +13,15 @@ export default function Rule() {
                 elevation={0}
                 sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
             >
-                <Toolbar sx={{ flexWrap: 'wrap' }}>
-                    <nav>
+                <Box sx={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        }}>
                         <Link
                             variant="button"
                             color="text.primary"
-                            href="#"
+                            href=""
                             sx={{ my: 1, mx: 1.5 }}
                         >
                             Home
@@ -26,7 +29,7 @@ export default function Rule() {
                         <Link
                             variant="button"
                             color="text.primary"
-                            href="#"
+                            href="normal"
                             sx={{ my: 1, mx: 1.5 }}
                         >
                             Games
@@ -34,25 +37,24 @@ export default function Rule() {
                         <Link
                             variant="button"
                             color="text.primary"
-                            href="#"
+                            href="rule"
                             sx={{ my: 1, mx: 1.5 }}
                         >
                             Rule
                         </Link>
-                    </nav>
-                </Toolbar>
+                </Box>
             </AppBar>
             <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
                 <Typography
                     component="h1"
                     variant="h2"
                     align="center"
-                    color="text.primary"
+                    color="white"
                     gutterBottom
                 >
                     Game Rule
                 </Typography>
-                <Typography variant="h5" align="center" color="text.secondary" component="p">
+                <Typography variant="h5" align="center" color="white" component="p">
                     Wordle, the online word game is very easy to play and has very simple rules that one can go through.<br />
 
                     The player has to guess the Wordle in six attempts or less.

@@ -1,11 +1,11 @@
 import React from "react";
 import Rule from "../components/rule";
 
-const rulePage = (props) => {
+const RulePage = (props) => {
   return <div>
     <Rule />
   </div>;
 };
 
 
-export default rulePage;
+export default RulePage;

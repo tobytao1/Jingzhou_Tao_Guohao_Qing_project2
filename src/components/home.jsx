@@ -2,6 +2,9 @@ import React, {useState} from "react";
 import {useSelector, shallowEqual} from "react-redux";
 import "./rule.css";
 import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
+
+
 import {
     AppBar,
     Box,
@@ -38,7 +41,13 @@ const tiers = [
 
     },
 ];
+
 export default function Choose() {
+    const navigate = useNavigate();
+
+  
+const normalgamePage = () => {
+    navigate('/normal');}    
     return (
         <div>
 
@@ -48,12 +57,16 @@ export default function Choose() {
                 elevation={0}
                 sx={{borderBottom: (theme) => `1px solid ${theme.palette.divider}`}}
             >
-                <Toolbar sx={{flexWrap: 'wrap'}}>
-                    <nav>
+                <Box sx={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        }}>
+                   
                         <Link
                             variant="button"
                             color="text.primary"
-                            href="#"
+                            href=""
                             sx={{my: 1, mx: 1.5}}
                         >
                             Home
@@ -61,7 +74,8 @@ export default function Choose() {
                         <Link
                             variant="button"
                             color="text.primary"
-                            href="#"
+                            href="normal"
+
                             sx={{my: 1, mx: 1.5}}
                         >
                             Games
@@ -69,13 +83,13 @@ export default function Choose() {
                         <Link
                             variant="button"
                             color="text.primary"
-                            href="#"
+                            href="rule"
                             sx={{my: 1, mx: 1.5}}
                         >
                             Rule
                         </Link>
-                    </nav>
-                </Toolbar>
+                    
+                </Box>
             </AppBar>
             <Container disableGutters maxWidth="sm" component="main" sx={{pt: 8, pb: 6}}>
                 <Typography
@@ -135,9 +149,12 @@ export default function Choose() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button fullWidth variant='contained'>
+                                    {(tier.title === 'Normal') && <Button onClick ={normalgamePage} fullWidth variant='contained'>
                                         play
-                                    </Button>
+                                    </Button>}
+                                    {(tier.title === 'Hard') && <Button onClick ={normalgamePage} fullWidth variant='contained'>
+                                        play
+                                    </Button>}
                                 </CardActions>
                             </Card>
                         </Grid>
