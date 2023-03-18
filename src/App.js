@@ -3,12 +3,24 @@ import './App.css';
 import React from "react";
 import Rule from "./components/rule";
 import Choose from "./components/home";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import Normal from "./views/normalGamePage.js";
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
-      <Choose />
+      <Routes>
+      <Route path="/" element = {<Choose/>}/>
+      <Route exact path="/normal" element = {<Normal/>}/>     
+      
+      </Routes>
+      
+      
+      
     </div>
+    </BrowserRouter>
+    
   );
 }
 
