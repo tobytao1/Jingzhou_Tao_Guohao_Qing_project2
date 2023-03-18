@@ -4,7 +4,11 @@ import "./rule.css";
 //import WordElement from "./WordElement";
 import Button from '@mui/material/Button';
 import {AppBar, Container, Link, Toolbar, Typography,Box} from "@mui/material";
+import { useNavigate } from 'react-router-dom';
 export default function Rule() {
+    const navigate = useNavigate();
+    const homePage = () => {
+        navigate('/');}   
     return (
         <div>
             <AppBar
@@ -71,7 +75,7 @@ export default function Rule() {
                 </Typography>
             </Container>
 
-            <Button href="#" variant="contained">Back</Button>
+            <Button onClick = {homePage} variant="contained">Back</Button>
 
         </div>
     );
