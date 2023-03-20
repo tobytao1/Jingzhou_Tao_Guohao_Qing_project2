@@ -1,5 +1,5 @@
 import React,{useContext, useEffect} from "react";
-import { AppContext } from "../views/normalGamePage";
+import { AppContext } from "../views/hardGamePage";
 function Letter({letterPos, attemptVal}){
     const {board,setDisabledLetters,correctWord,currAttempt} = useContext(AppContext);
     console.log(board);

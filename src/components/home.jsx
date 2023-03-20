@@ -48,6 +48,8 @@ export default function Choose() {
   
 const normalgamePage = () => {
     navigate('/normal');}    
+const hardgamePage = () => {
+        navigate('/hard');}    
     return (
         <div>
 
@@ -152,7 +154,7 @@ const normalgamePage = () => {
                                     {(tier.title === 'Normal') && <Button onClick ={normalgamePage} fullWidth variant='contained'>
                                         play
                                     </Button>}
-                                    {(tier.title === 'Hard') && <Button onClick ={normalgamePage} fullWidth variant='contained'>
+                                    {(tier.title === 'Hard') && <Button onClick ={hardgamePage} fullWidth variant='contained'>
                                         play
                                     </Button>}
                                 </CardActions>

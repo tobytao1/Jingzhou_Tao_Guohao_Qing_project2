@@ -1,13 +1,13 @@
 import "../App.css";
 import React from "react";
-import Board from "../components/normalBoard";
-import Keyboard from "../components/keyBoard";
-import GameOver from "../components/result";
+import Board from "../components/hardBoard";
+import Keyboard from "../components/hardKeyBoard";
+import GameOver from "../components/hardResult";
 import {createContext, useEffect, useState} from "react";
-import { boardDefault,generatorWordSet } from "./sixBoard";
+import { boardDefault,generatorWordSet } from "./sevenBoard.js";
 
 export const AppContext = createContext();
-function  Normal(){
+function  Hard(){
     const [board,setBoard] = useState(boardDefault); 
     const [currAttempt,setCurrAttempt] = useState({attempt:0,letterPos:0});
     const [wordSet,setWordSet] = useState(new Set());
@@ -27,7 +27,7 @@ function  Normal(){
         })
     } ,[])
     const onSelectLetter = (keyVal) =>{
-        if (currAttempt.letterPos > 5){
+        if (currAttempt.letterPos > 6){
             return; 
         } 
         const newBoard = [...board]
@@ -36,7 +36,7 @@ function  Normal(){
         setCurrAttempt({...currAttempt,letterPos: currAttempt.letterPos+1})
     }
     const onEnter = (keyVal) => {
-        if (currAttempt.letterPos !== 6){
+        if (currAttempt.letterPos !== 7){
             window.confirm("we need longer word")
             setGameOver({ valid:false,gameOver: false, guessedWord: false});
             return; 
@@ -83,4 +83,4 @@ function  Normal(){
         </div>
     );
 }
-export default Normal;
+export default Hard;

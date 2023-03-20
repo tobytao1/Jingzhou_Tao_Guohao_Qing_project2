@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { boardDefault } from "../views/sixBoard";
-import Letter from './normalGrid';
+import { boardDefault } from "../views/sevenBoard.js";
+import Letter from './hardGrid';
 function Board(){
     const [board,setBoard] = useState(boardDefault);
 
