@@ -60,7 +60,7 @@ function  Hard(){
             setGameOver({ valid:true,gameOver: true, guessedWord: true});
             return;
           }
-        else {if (currAttempt.attempt === 5) {
+        else {if (currAttempt.attempt === 4) {
             setGameOver({ valid:true,gameOver: true, guessedWord: false });
             return;
           }

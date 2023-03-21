@@ -5,7 +5,6 @@ export const boardDefault =[
     ["","","","","","",""],
     ["","","","","","",""],
     ["","","","","","",""],
-    ["","","","","","",""],
 ]
 export const generatorWordSet = async () =>{
     let wordSet;
