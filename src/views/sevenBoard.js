@@ -1,4 +1,4 @@
-import wordBank from "../components/seven_letter_dict.txt"
+import wordBank from "../components/seven_letter_dict.txt";
 export const boardDefault =[
     ["","","","","","",""],
     ["","","","","","",""],

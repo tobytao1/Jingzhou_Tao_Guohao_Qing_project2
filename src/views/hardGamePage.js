@@ -31,9 +31,8 @@ function  Hard(){
         if (currAttempt.letterPos > 6){
             return; 
         } 
-        const newBoard = window.localStorage.getItem("board");
+        const newBoard = [...board]
         newBoard[currAttempt.attempt][currAttempt.letterPos] = keyVal;
-        window.localStorage.setItem("board",JSON.stringify(newBoard));
         setBoard(newBoard);
         setCurrAttempt({...currAttempt,letterPos: currAttempt.letterPos+1})
     }
@@ -45,7 +44,7 @@ function  Hard(){
         }
 
         let currWord = "";
-        for (let i = 0;i < 6;i ++){
+        for (let i = 0;i < 7;i ++){
             currWord += board[currAttempt.attempt][i]
             
         }

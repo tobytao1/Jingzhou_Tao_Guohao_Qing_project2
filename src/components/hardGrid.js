@@ -2,9 +2,8 @@ import React,{useContext, useEffect} from "react";
 import { AppContext } from "../views/hardGamePage";
 function Letter({letterPos, attemptVal}){
     const {board,setDisabledLetters,correctWord,currAttempt} = useContext(AppContext);
-    console.log(board);
     const storeBoard = JSON.parse(window.localStorage.getItem("board"));
-    const letter = storeBoard[attemptVal][letterPos];
+    const letter = board[attemptVal][letterPos];
     const correct = correctWord.toUpperCase()[letterPos] === letter;
     const almost = !correct && letter !== "" && correctWord.toUpperCase().includes(letter);
     const letterState = currAttempt.attempt>attemptVal &&
