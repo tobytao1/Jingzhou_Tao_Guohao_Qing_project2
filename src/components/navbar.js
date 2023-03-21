@@ -26,7 +26,7 @@ const Navbar = () => {
     navigate('/normal');
   }
   const rulePage = () => {
-    navigate('/hard');
+    navigate('/rule');
   }
   return <div>
     <AppBar
@@ -52,7 +52,7 @@ const Navbar = () => {
                         <Button
                             variant="button"
                             color="text.primary"
-                            href="normal"
+                            onClick = {gamePage}
 
                             sx={{my: 1, mx: 1.5}}
                         >
@@ -61,7 +61,7 @@ const Navbar = () => {
                         <Button
                             variant="button"
                             color="text.primary"
-                            href="rule"
+                            onClick ={rulePage}
                             sx={{my: 1, mx: 1.5}}
                         >
                             Rule
