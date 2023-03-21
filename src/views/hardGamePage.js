@@ -30,8 +30,9 @@ function  Hard(){
         if (currAttempt.letterPos > 6){
             return; 
         } 
-        const newBoard = [...board]
+        const newBoard = window.localStorage.getItem("board");
         newBoard[currAttempt.attempt][currAttempt.letterPos] = keyVal;
+        window.localStorage.setItem("board",JSON.stringify(newBoard));
         setBoard(newBoard);
         setCurrAttempt({...currAttempt,letterPos: currAttempt.letterPos+1})
     }
@@ -47,10 +48,13 @@ function  Hard(){
             currWord += board[currAttempt.attempt][i]
             
         }
-    
-        setCurrAttempt({attempt:currAttempt.attempt+1,letterPos:0})
-    
-       
+        if (wordSet.has(currWord.toLowerCase())){
+            setCurrAttempt({attempt:currAttempt.attempt+1,letterPos:0})
+        }
+        else{
+            window.confirm("word not found")
+            
+        }
         console.log(correctWord);
         if (currWord.toLowerCase() === correctWord) {
             setGameOver({ valid:true,gameOver: true, guessedWord: true});

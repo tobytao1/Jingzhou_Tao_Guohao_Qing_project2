@@ -2,8 +2,10 @@ import React,{useContext, useEffect} from "react";
 import { AppContext } from "../views/normalGamePage";
 function Letter({letterPos, attemptVal}){
     const {board,setDisabledLetters,correctWord,currAttempt} = useContext(AppContext);
-    console.log(board);
-    const letter = board[attemptVal][letterPos];
+    const storeBoard = JSON.parse(window.localStorage.getItem("board"));
+    console.log("board");
+    console.log(storeBoard);
+    const letter = storeBoard[attemptVal][letterPos];
     const correct = correctWord.toUpperCase()[letterPos] === letter;
     const almost = !correct && letter !== "" && correctWord.toUpperCase().includes(letter);
     const letterState = currAttempt.attempt>attemptVal &&

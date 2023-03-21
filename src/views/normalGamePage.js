@@ -18,7 +18,7 @@ function  Normal(){
         gameOver: false,
         guessedWord: false,
       });
-   
+    window.localStorage.setItem("board",JSON.stringify(board));
     useEffect (() => {
     generatorWordSet().then((words) =>{
             setWordSet(words.wordSet);
@@ -32,6 +32,7 @@ function  Normal(){
         } 
         const newBoard = [...board]
         newBoard[currAttempt.attempt][currAttempt.letterPos] = keyVal;
+        window.localStorage.setItem("board",JSON.stringify(newBoard));
         setBoard(newBoard);
         setCurrAttempt({...currAttempt,letterPos: currAttempt.letterPos+1})
     }
@@ -47,10 +48,14 @@ function  Normal(){
             currWord += board[currAttempt.attempt][i]
             
         }
-    
-        setCurrAttempt({attempt:currAttempt.attempt+1,letterPos:0})
-    
-       
+        if (wordSet.has(currWord.toLowerCase())){
+            setCurrAttempt({attempt:currAttempt.attempt+1,letterPos:0})
+        }
+        else{
+            window.confirm("word not found")
+            
+        }
+        localStorage.setItem("currAttempt", JSON.stringify(currAttempt));
         console.log(correctWord);
         if (currWord.toLowerCase() === correctWord) {
             setGameOver({ valid:true,gameOver: true, guessedWord: true});
