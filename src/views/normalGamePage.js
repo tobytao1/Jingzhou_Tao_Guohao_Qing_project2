@@ -5,6 +5,7 @@ import Keyboard from "../components/keyBoard";
 import GameOver from "../components/result";
 import {createContext, useEffect, useState} from "react";
 import { boardDefault,generatorWordSet } from "./sixBoard";
+import Navbar from "../components/navbar";
 
 export const AppContext = createContext();
 function  Normal(){
@@ -76,6 +77,7 @@ function  Normal(){
     }
     return (
         <div className="App">
+            <Navbar/>
                 <h1>wordle</h1>
             
             <AppContext.Provider value={{board, setBoard,currAttempt,setCurrAttempt,onDelete,

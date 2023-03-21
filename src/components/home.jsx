@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {useSelector, shallowEqual} from "react-redux";
 import "./rule.css";
 import Button from '@mui/material/Button';
+import Navbar from "./navbar";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -52,47 +53,7 @@ const hardgamePage = () => {
         navigate('/hard');}    
     return (
         <div>
-
-            <AppBar
-                position="static"
-                color="default"
-                elevation={0}
-                sx={{borderBottom: (theme) => `1px solid ${theme.palette.divider}`}}
-            >
-                <Box sx={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        }}>
-                   
-                        <Link
-                            variant="button"
-                            color="text.primary"
-                            href=""
-                            sx={{my: 1, mx: 1.5}}
-                        >
-                            Home
-                        </Link>
-                        <Link
-                            variant="button"
-                            color="text.primary"
-                            href="normal"
-
-                            sx={{my: 1, mx: 1.5}}
-                        >
-                            Games
-                        </Link>
-                        <Link
-                            variant="button"
-                            color="text.primary"
-                            href="rule"
-                            sx={{my: 1, mx: 1.5}}
-                        >
-                            Rule
-                        </Link>
-                    
-                </Box>
-            </AppBar>
+            <Navbar/>
             <Container disableGutters maxWidth="sm" component="main" sx={{pt: 8, pb: 6}}>
                 <Typography
                     component="h1"

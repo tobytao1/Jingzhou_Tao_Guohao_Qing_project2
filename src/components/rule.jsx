@@ -5,49 +5,14 @@ import "./rule.css";
 import Button from '@mui/material/Button';
 import {AppBar, Container, Link, Toolbar, Typography,Box} from "@mui/material";
 import { useNavigate } from 'react-router-dom';
+import Navbar from "./navbar";
 export default function Rule() {
     const navigate = useNavigate();
     const homePage = () => {
         navigate('/');}   
     return (
         <div>
-            <AppBar
-                position="static"
-                color="default"
-                elevation={0}
-                sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
-            >
-                <Box sx={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        }}>
-                        <Link
-                            variant="button"
-                            color="text.primary"
-                            href=""
-                            sx={{ my: 1, mx: 1.5 }}
-                        >
-                            Home
-                        </Link>
-                        <Link
-                            variant="button"
-                            color="text.primary"
-                            href="normal"
-                            sx={{ my: 1, mx: 1.5 }}
-                        >
-                            Games
-                        </Link>
-                        <Link
-                            variant="button"
-                            color="text.primary"
-                            href="rule"
-                            sx={{ my: 1, mx: 1.5 }}
-                        >
-                            Rule
-                        </Link>
-                </Box>
-            </AppBar>
+           <Navbar/>
             <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
                 <Typography
                     component="h1"
